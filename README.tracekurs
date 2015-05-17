@@ -1,0 +1,14 @@
+Hej,
+
+Börja med att checka ut detta gitrepo:
+  $ git clone -b tracelab git://github.com/sylogkurs/setup-scripts
+
+Följ README-filen i samma katalog som denna fil för att bygga en Linuximage
+till din Beaglebone Black.
+
+När du kommer till steget för att bygga virtual/kernel så kan du lägga till
+'trace-image' som byggtarget:
+
+Det vill säga:
+	$ . ./environment-angstrom-v2013.12
+	$ MACHINE=beagleboard bitbake virtual/kernel trace-image

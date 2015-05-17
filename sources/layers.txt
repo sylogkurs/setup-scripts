@@ -30,3 +30,7 @@ meta-exynos,git://github.com/slimlogic/meta-exynos,master,ac21b106ce5c4c928f62e8
 meta-telephony,git://github.com/koenkooi/meta-telephony,master,f71f5ea031d96a5a84bde4531974542ae49f8bee
 meta-qt5,git://github.com/meta-qt5/meta-qt5,dora,HEAD
 openembedded-core,git://github.com/Angstrom-distribution/oe-core.git,angstrom-staging-yocto1.5,HEAD
+
+# Added
+meta-selinux,git://git.yoctoproject.org/meta-selinux,dora,HEAD
+meta-tracelab,git://github.com/sylogkurs/meta-tracelab,master,HEAD
