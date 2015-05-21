@@ -21,8 +21,7 @@ Partition 2: [resterande yta], formatera som ext4
 
 På partition 1:
 Kopiera in filerna u-boot.img, MLO, och zImage från deploy/eglibc/images/beaglebone/
-Skapa katalogen boot
-Kopiera in filen am335x-boneblack.dtb från extras/ till boot/
+Kopiera in filen am335x-boneblack.dtb från extras/
 
 På partition 2:
 Extrahera deploy/eglibc/images/beaglebone/trace-image-beaglebone.tar.xz
