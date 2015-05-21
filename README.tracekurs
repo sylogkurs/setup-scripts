@@ -30,6 +30,6 @@ Du kan nu stoppa in minneskortet i din beaglebone, stoppa ubooten under
 uppstart och köra dessa kommandon:
 setenv loadfdt 'fatload mmc ${mmcdev} ${fdtaddr} ${bootdir}/${fdtfile}'
 setenv mmcboot 'mmc dev ${mmcdev}; if mmc rescan; then echo SD/MMC found on device ${mmcdev};if run loadbootenv; then echo Loaded environment from ${bootenv};run importbootenv;fi;if test -n $uenvcmd; then echo Running uenvcmd ...;run uenvcmd;fi;if fatload mmc ${mmcdev} ${loadaddr} /zImage ; then run mmcloados;fi;fi'
-saveenv
 
-Starta sedan om den. Den kommer nu starta upp automatiskt från minneskortet.
+Starta sedan upp den:
+boot
