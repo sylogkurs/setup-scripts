@@ -5,6 +5,7 @@ Börja med att checka ut detta gitrepo:
 
 Följ README-filen i samma katalog som denna fil för att bygga en Linuximage
 till din Beaglebone Black, men sätt MACHINE till beaglebone.
+OBS: README säger beagle*board*, vi vill ha beagle*bone*.
 
 När du kommer till steget för att bygga virtual/kernel så kan du lägga till
 'trace-image' som byggtarget:
@@ -20,16 +21,17 @@ Partition 1: 100MB, formatera som vfat
 Partition 2: [resterande yta], formatera som ext4
 
 På partition 1:
-Kopiera in filerna u-boot.img, MLO, och zImage från deploy/eglibc/images/beaglebone/
-Kopiera in filen am335x-boneblack.dtb från extras/
+Kopiera in filerna MLO, u-boot.img från deploy/eglibc/images/beaglebone/
 
 På partition 2:
 Extrahera deploy/eglibc/images/beaglebone/trace-image-beaglebone.tar.xz
 
-Du kan nu stoppa in minneskortet i din beaglebone, stoppa ubooten under
-uppstart och köra dessa kommandon:
-setenv loadfdt 'fatload mmc ${mmcdev} ${fdtaddr} ${bootdir}/${fdtfile}'
-setenv mmcboot 'mmc dev ${mmcdev}; if mmc rescan; then echo SD/MMC found on device ${mmcdev};if run loadbootenv; then echo Loaded environment from ${bootenv};run importbootenv;fi;if test -n $uenvcmd; then echo Running uenvcmd ...;run uenvcmd;fi;if fatload mmc ${mmcdev} ${loadaddr} /zImage ; then run mmcloados;fi;fi'
+Du kan nu stoppa in minneskortet i din beaglebone och starta upp den. Håll inne
+MMC-boot-knappen när du sätter i strömmen. Den är den ensamma knappen intill
+MMC-hållaren. När du gör detta kommer stage 1-bootladdaren i SoC:en välja att
+starta från MMC:n. Du kan släppa knappen nästan direkt efter att du strömsatt
+kortet.
 
-Starta sedan upp den:
-boot
+Stage 1-bootladdaren kommer läsa in MLO, som kommer läsa in u-boot från den
+första partitionen. u-boot laddar sedan /boot/zImage och
+/boot/am335x-boneblack.dtb från den andra partitionen.
