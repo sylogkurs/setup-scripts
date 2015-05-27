@@ -25,6 +25,7 @@ Kopiera in filerna MLO, u-boot.img från deploy/eglibc/images/beaglebone/
 
 På partition 2:
 Extrahera deploy/eglibc/images/beaglebone/trace-image-beaglebone.tar.xz
+OBS: Montera och extrahera som root (med sudo)
 
 Du kan nu stoppa in minneskortet i din beaglebone och starta upp den. Håll inne
 MMC-boot-knappen när du sätter i strömmen. Den är den ensamma knappen intill
