@@ -17,7 +17,7 @@ Det vill säga:
 
 För att boota din nya fina kärna och ditt rootfilsystem, skapa två partitioner
 på ditt minneskort:
-Partition 1: 100MB, formatera som vfat
+Partition 1: 100MB, formatera som vfat, flagga med "boot"-flagga (viktigt)
 Partition 2: [resterande yta], formatera som ext4
 
 På partition 1:
